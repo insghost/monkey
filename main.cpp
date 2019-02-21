@@ -31,8 +31,8 @@ vector<pair<int, int> > getNeighbors(pair<int, int> coordinates) {
   return neighbors;
 }
 
-bool coordinatesAreValid(pair<int, int> coordinates) {
-  return sumDigits(coordinates.first) + sumDigits(coordinates.second) <= 19;
+bool coordinatesAreValid(pair<int, int> coordinates, int maxAbsValSum) {
+  return sumDigits(coordinates.first) + sumDigits(coordinates.second) <= maxAbsValSum;
 }
 
 int main(int argc, char *argv[]) {
@@ -42,6 +42,7 @@ int main(int argc, char *argv[]) {
     cout << "./monkey maxAbsoluteValueSum\n";
     return 0;
   }
+  const int maxAbsValSum = atoi(argv[1]);
   int reachable = 0;
   pair<int, int> start (0, 0);
   map<pair<int,int>, bool> visited;
@@ -51,7 +52,7 @@ int main(int argc, char *argv[]) {
   while (!q.empty()) {
     auto currCoordinates = q.front();
     q.pop();
-    if (coordinatesAreValid(currCoordinates)) {
+    if (coordinatesAreValid(currCoordinates, maxAbsValSum)) {
       reachable++;
       auto neighbors = getNeighbors(currCoordinates);
       for (auto neighbor = neighbors.begin(); neighbor != neighbors.end(); neighbor++) {
