@@ -62,11 +62,6 @@ int main(int argc, char *argv[]) {
         }
       }
     }
-    // cout << currCoordinates.first << "," << currCoordinates.second << "\n";
-        // cout << neighbor->first << " " << neighbor->second << "\n";
   }
   cout << "Can reach " << reachable << "\n";
-  // visited[start] = true;
-  // cout << start.first << "," << start.second << " " << visited[start] << "\n";
-  // cout << sumDigits(0) << "\n";
 }
