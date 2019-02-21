@@ -35,7 +35,13 @@ bool coordinatesAreValid(pair<int, int> coordinates) {
   return sumDigits(coordinates.first) + sumDigits(coordinates.second) <= 19;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+  if (argc != 2) {
+    cout << "Incorrect number of arguments. Please specify max absolute value sum.\n";
+    cout << "Usage:\n";
+    cout << "./monkey maxAbsoluteValueSum\n";
+    return 0;
+  }
   int reachable = 0;
   pair<int, int> start (0, 0);
   map<pair<int,int>, bool> visited;

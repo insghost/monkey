@@ -4,6 +4,12 @@ monkey :
 clean :
 	rm monkey
 
-test :
+test : test19 testBadArgs
+
+test19 :
+	./monkey 19 > output.txt
+	diff tests/test19.txt output.txt
+
+testBadArgs :
 	./monkey > output.txt
-	diff correct.txt output.txt
+	diff tests/testBadArgs.txt output.txt
