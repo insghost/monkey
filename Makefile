@@ -5,5 +5,5 @@ clean :
 	rm monkey
 
 test :
-	./monkey < input.txt > output.txt
+	./monkey > output.txt
 	diff correct.txt output.txt
