@@ -1,8 +1,13 @@
 # Monkey Grid problem
 
 ## Usage
-`make clean && make && make test`
+`make && make test`
+Build and test the project
+
 `./monkey 19`
+Get the answer for max absolute value sum of digits = 19
+
+`make clean` to remove the binary
 
 The argument to the monkey binary should be the max absolute value (19)
 
